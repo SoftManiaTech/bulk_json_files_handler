@@ -1,12 +1,16 @@
 # $SPLUNK_HOME/etc/apps/helloworld/bin/hello.py
 from __future__ import print_function
-from builtins import str
 import sys
+sys.path.append("./python-3.12.1/")
+from builtins import str
 import xml.dom.minidom, xml.sax.saxutils
 import os
+import json
+
 
 # Empty introspection routine
 def do_scheme():
+    print("in scheme")
     pass
 
 # Empty validation routine. This routine is optional.
@@ -44,9 +48,11 @@ def get_path():
 def run_script():
     # the folders with sample data structure
     # python logic to index the list of json files
-    for root, dirs, files in os.walk(get_path()):
+    print("in run script")
+    # sys.exit(0)
+    for root, dirs, files in os.walk(os.getcwd()):
         for file in files:
-            print("hello world, %s!" % file)
+            print(json.dumps({"file":file}))
 
 # Script must implement these args: scheme, validate-arguments
 if __name__ == '__main__':
