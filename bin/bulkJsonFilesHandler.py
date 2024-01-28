@@ -73,8 +73,12 @@ def file_mod(path,checkpoint_path):
 
 # Routine to index data
 def run_script():
-    base_dir = r'C:\Soft Mania\Usecase 3\mkdir'
-    checkpoint_path = r'C:\Program Files\SplunkUniversalForwarder\etc\apps\bulk_json_files_handler\checkpoints'
+    base_dir = ""
+    checkpoint_path = ""
+    with open(os.path.join("C:\\","Program Files","SplunkUniversalForwarder","etc","apps","bulk_json_files_handler","default","inputs.json"),"r") as file:
+        inputs = json.load(file)
+        base_dir = inputs["data_source"]
+        checkpoint_path = inputs["checkpoints_directory"]
     for root, dirs, files in os.walk(base_dir):
         for dir in dirs:
             path = os.path.join(base_dir,dir)
