@@ -1,4 +1,4 @@
 {
-    "data_source":"C:\\Soft Mania\\Usecase 3\\mkdir",
+    "data_source":"C:\\Program Files\\SplunkUniversalForwarder\\etc\\apps\\bulk_json_files_handler\\bin\\__svclog__",
     "checkpoints_directory":"C:\\Program Files\\SplunkUniversalForwarder\\etc\\apps\\bulk_json_files_handler\\checkpoints"
 }
